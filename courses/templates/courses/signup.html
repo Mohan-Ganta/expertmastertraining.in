@@ -1,0 +1,22 @@
+{% extends 'courses/base.html' %}
+{% load course_custom_tags %}
+{%block title%}
+Signup
+{% endblock %}
+
+{%block content%}
+<center>
+<div class="container">
+   <h1 >Signup To Create Your Best Dashboard</h1>
+
+   <div>
+      <form action="/signup" method="POST">
+         {% csrf_token %}
+         {{form.as_ul}}
+
+         <input type="submit" value="Register">
+      </form>
+   </div>
+</div>
+</center>
+{%endblock%}
